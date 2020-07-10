@@ -18,7 +18,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #2F0601;
+    background: #222222;
 }
 
 .calculator {
@@ -42,20 +42,20 @@ body {
     width: 60px;
     height: 60px;
     color: #fff;
-    background: #32908F;
+    background: #1C5D99;
     place-items: center;
     border: 1px solid rgba(0,0,0,0.1);
 }
 
 .calculator span:active {
-    background: #A3E7FC;
+    background: #fff;
     color: #111;
 }
 
 #clear {
     grid-column: span 2;
     width: 120px;
-    background: #553A41;
+    background: #639FAB;
 }
 
 #add {
@@ -64,7 +64,7 @@ body {
 }
 
 #equals {
-    background-color: #26C485;
+    background-color: #BBCDE5;
 }
 
 #equals:active {
