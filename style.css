@@ -1,3 +1,9 @@
+
+/*
+    Made by Nico Nap
+    GitHub: https://github.com/niconap
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 * {
@@ -12,12 +18,13 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #091921;
+    background: #2F0601;
 }
 
 .calculator {
     position: relative;
     display: grid;
+    box-shadow: 0px 0px 40px 0px black;
 }
 
 #value {
@@ -35,20 +42,20 @@ body {
     width: 60px;
     height: 60px;
     color: #fff;
-    background: #0c2835;
+    background: #32908F;
     place-items: center;
     border: 1px solid rgba(0,0,0,0.1);
 }
 
 .calculator span:active {
-    background: #74ff3b;
+    background: #A3E7FC;
     color: #111;
 }
 
 #clear {
     grid-column: span 2;
     width: 120px;
-    background: #ff3077;
+    background: #553A41;
 }
 
 #add {
@@ -56,8 +63,8 @@ body {
     height: 120px;
 }
 
-#equal {
-    background-color: #03b1ff;
+#equals {
+    background-color: #26C485;
 }
 
 #zero {
