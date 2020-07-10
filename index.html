@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Calculator</title>
+        <meta name="description" content="Calculator">
+        <meta name="author" content="SitePoint">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <form class="calculator" name="calc">
+            <input id="value" type="text" name="txt" readonly="">
+            <span class="num" id="clear" onclick="document.calc.txt.value = ''">c</span>
+            <span class="num" id="divide" onclick="document.calc.txt.value += '/'">/</span>
+            <span class="num" id="multiply" onclick="document.calc.txt.value += '*'">*</span>
+            <span class="num" id="seven" onclick="document.calc.txt.value += '7'">7</span>
+            <span class="num" id="eight" onclick="document.calc.txt.value += '8'">8</span>
+            <span class="num" id="nine" onclick="document.calc.txt.value += '9'">9</span>
+            <span class="num" id="subtract" onclick="document.calc.txt.value += '-'">-</span>
+            <span class="num" id="four" onclick="document.calc.txt.value += '4'">4</span>
+            <span class="num" id="five" onclick="document.calc.txt.value += '5'">5</span>
+            <span class="num" id="six" onclick="document.calc.txt.value += '6'">6</span>
+            <span class="num" id="add" onclick="document.calc.txt.value += '+'">+</span>
+            <span class="num" id="three" onclick="document.calc.txt.value += '3'">3</span>
+            <span class="num" id="two" onclick="document.calc.txt.value += '2'">2</span>
+            <span class="num" id="one" onclick="document.calc.txt.value += '1'">1</span>
+            <span class="num" id="zero" onclick="document.calc.txt.value += '0'">0</span>
+            <span class="num" id="comma" onclick="document.calc.txt.value += '.'">.</span>
+            <span class="num" id="equals">=</span>
+        </form>
+        <script src="scripts.js"></script>
+    </body>
+</html>
