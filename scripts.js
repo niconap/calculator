@@ -8,6 +8,7 @@ let input = "";
 let inputArray = [];
 let answer = "";
 let updated = false;
+let commaInput = false;
 
 /* Functions for doing the basic math operations */
 
@@ -56,8 +57,13 @@ function operate(array) {
 }
 
 function updateDisplay(answer) {
-    document.getElementById("value").value = answer;
-    updated = true;
+    if (answer != "Infinity") {
+        document.getElementById("value").value = answer;
+        updated = true;
+    } else {
+        document.getElementById("value").value = "ERROR";
+        updated = true;
+    }
 }
 
 function checkIfUpdated() {
@@ -148,9 +154,12 @@ num9.addEventListener("click", function(){
 
 const comma = document.getElementById("comma");
 comma.addEventListener("click", function(){
-    checkIfUpdated();
-    document.getElementById("value").value += ".";
-    input += ".";
+    if (commaInput == false) {
+        checkIfUpdated();
+        document.getElementById("value").value += ".";
+        input += ".";
+        commaInput = true;
+    }
 });
 
 const addButton = document.getElementById("add");
@@ -159,6 +168,7 @@ addButton.addEventListener("click", function(){
         document.getElementById("value").value = "";
         inputArray.push(input);
         input = "";
+        commaInput = false;
         inputArray.push("add");
     }
 });
@@ -169,6 +179,7 @@ subtractButton.addEventListener("click", function(){
         document.getElementById("value").value = "";
         inputArray.push(input);
         input = "";
+        commaInput = false;
         inputArray.push("subtract");
     }
 });
@@ -179,6 +190,7 @@ multiplyButton.addEventListener("click", function(){
         document.getElementById("value").value = "";
         inputArray.push(input);
         input = "";
+        commaInput = false;
         inputArray.push("multiply");
     }
 });
@@ -189,6 +201,7 @@ divideButton.addEventListener("click", function(){
         document.getElementById("value").value = "";
         inputArray.push(input);
         input = "";
+        commaInput = false;
         inputArray.push("divide");
     }
 });
@@ -199,6 +212,7 @@ equalsButton.addEventListener("click", function(){
         inputArray.push(input);
         input = "";
         answer = operate(inputArray);
+        commaInput = false;
         updateDisplay(answer);
     }
 });
@@ -208,5 +222,6 @@ clearButton.addEventListener("click", function(){
     input = "";
     inputArray = [];
     answer = "";
+    commaInput = false;
     document.getElementById("value").value = "";
 })
