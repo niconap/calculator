@@ -91,30 +91,51 @@ num9.addEventListener("click", function(){
     input += "9";
 });
 
+const comma = document.getElementById("comma");
+comma.addEventListener("click", function(){
+    input += ".";
+});
+
 const addButton = document.getElementById("add");
 addButton.addEventListener("click", function(){
-    inputArray.push(input);
-    input = "";
-    inputArray.push("add");
+    if (input != "") {
+        inputArray.push(input);
+        input = "";
+        inputArray.push("add");
+    }
 });
 
 const subtractButton = document.getElementById("subtract");
 subtractButton.addEventListener("click", function(){
-    inputArray.push(input);
-    input = "";
-    inputArray.push("subtract");
+    if (input != "") {
+        inputArray.push(input);
+        input = "";
+        inputArray.push("subtract");
+    }
 });
 
 const multiplyButton = document.getElementById("multiply");
 multiplyButton.addEventListener("click", function(){
-    inputArray.push(input);
-    input = "";
-    inputArray.push("multiply");
+    if (input != "") {
+        inputArray.push(input);
+        input = "";
+        inputArray.push("multiply");
+    }
 });
 
 const divideButton = document.getElementById("divide");
 divideButton.addEventListener("click", function(){
-    inputArray.push(input);
-    input = "";
-    inputArray.push("divide");
+    if (input != "") {
+        inputArray.push(input);
+        input = "";
+        inputArray.push("divide");
+    }
+});
+
+const equalsButton = document.getElementById("equals");
+equalsButton.addEventListener("click", function(){
+    if (input != "") {
+        inputArray.push(input);
+        input = "";
+    }
 });
