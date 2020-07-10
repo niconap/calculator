@@ -54,13 +54,13 @@ body {
 
 #clear {
     grid-column: span 2;
-    width: 120px;
+    width: 100%;
     background: #639FAB;
 }
 
 #add {
     grid-row: span 2;
-    height: 120px;
+    height: 100%;
 }
 
 #equals {
@@ -74,12 +74,12 @@ body {
 
 #zero {
     grid-column: span 2;
-    width: 120px;
+    width: 100%;
 }
 
 #paragraph {
     grid-column: span 4;
-    width: 240px;
+    width: 100%;
 }
 
 a {
