@@ -67,7 +67,26 @@ body {
     background-color: #26C485;
 }
 
+#equals:active {
+    background: #A3E7FC;
+    color: #111;
+}
+
 #zero {
     grid-column: span 2;
     width: 120px;
+}
+
+#paragraph {
+    grid-column: span 4;
+    width: 240px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
 }
