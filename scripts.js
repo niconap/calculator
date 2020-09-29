@@ -76,10 +76,6 @@ function checkIfUpdated() {
     }
 }
 
-function addNumber(number) {
-    input += number;
-}
-
 /* Eventlisteners for the buttons */
 
 const num0 = document.getElementById("zero");
@@ -224,4 +220,4 @@ clearButton.addEventListener("click", function(){
     answer = "";
     commaInput = false;
     document.getElementById("value").value = "";
-})
+});
