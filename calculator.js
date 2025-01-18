@@ -42,7 +42,7 @@ class Calculator {
             || this.equation.indexOf('/') >= 0) {
             let mult_index = this.equation.indexOf('*');
             let div_index = this.equation.indexOf('/');
-            if (div_index == -1 || mult_index < div_index) {
+            if (div_index == -1 || mult_index < div_index && mult_index != -1) {
                 let sub_result = this.equation[mult_index - 1] *
                     this.equation[mult_index + 1];
                 this.equation[mult_index - 1] = sub_result;
@@ -59,7 +59,7 @@ class Calculator {
             || this.equation.indexOf('-') >= 0) {
             let plus_index = this.equation.indexOf('+');
             let min_index = this.equation.indexOf('-');
-            if (min_index == -1 || plus_index < min_index) {
+            if (min_index == -1 || plus_index < min_index && plus_index != -1) {
                 let sub_result = this.equation[plus_index - 1] +
                     this.equation[plus_index + 1];
                 this.equation[plus_index - 1] = sub_result;

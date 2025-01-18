@@ -30,6 +30,12 @@ test('Correctly calculates result', () => {
     calc_instance.enter('*');
     calc_instance.enter('2');
     expect(calc_instance.calculate()).toBe(9)
+    calc_instance.enter('5');
+    calc_instance.enter('/');
+    calc_instance.enter('2');
+    calc_instance.enter('-');
+    calc_instance.enter('2');
+    expect(calc_instance.calculate()).toBe(0.5)
     calc_instance.enter('2');
     calc_instance.enter('*');
     expect(calc_instance.calculate()).toStrictEqual('Error')
