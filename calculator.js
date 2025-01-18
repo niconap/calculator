@@ -12,9 +12,21 @@ class Calculator {
 
     enter(input) {
         // Add an input, such as a number or operator, to the equation.
-        const operators = ['+', '-', '*', '/'];
+        const operators = ['+', '-', '*', '/', '.'];
         if (isNaN(input) && !operators.includes(input)) {
             return;
+        }
+
+        if (input == '.') {
+            if (!Number.isInteger(this.equation[this.equation.length - 1])) {
+                return;
+            }
+
+            if (!isNaN(this.equation[this.equation.length - 1])) {
+                let num = String(this.equation[this.equation.length - 1])
+                this.equation[this.equation.length - 1] = num + input;
+                return;
+            }
         }
 
         if (!isNaN(this.equation[this.equation.length - 1]) && !isNaN(input)) {
@@ -43,13 +55,13 @@ class Calculator {
             let mult_index = this.equation.indexOf('*');
             let div_index = this.equation.indexOf('/');
             if (div_index == -1 || mult_index < div_index && mult_index != -1) {
-                let sub_result = this.equation[mult_index - 1] *
-                    this.equation[mult_index + 1];
+                let sub_result = Number(this.equation[mult_index - 1]) *
+                    Number(this.equation[mult_index + 1]);
                 this.equation[mult_index - 1] = sub_result;
                 this.equation.splice(mult_index, 2);
             } else {
-                let sub_result = this.equation[div_index - 1] /
-                    this.equation[div_index + 1];
+                let sub_result = Number(this.equation[div_index - 1]) /
+                    Number(this.equation[div_index + 1]);
                 this.equation[div_index - 1] = sub_result;
                 this.equation.splice(div_index, 2);
             }
@@ -60,13 +72,13 @@ class Calculator {
             let plus_index = this.equation.indexOf('+');
             let min_index = this.equation.indexOf('-');
             if (min_index == -1 || plus_index < min_index && plus_index != -1) {
-                let sub_result = this.equation[plus_index - 1] +
-                    this.equation[plus_index + 1];
+                let sub_result = Number(this.equation[plus_index - 1]) +
+                    Number(this.equation[plus_index + 1]);
                 this.equation[plus_index - 1] = sub_result;
                 this.equation.splice(plus_index, 2);
             } else {
-                let sub_result = this.equation[min_index - 1] -
-                    this.equation[min_index + 1];
+                let sub_result = Number(this.equation[min_index - 1]) -
+                    Number(this.equation[min_index + 1]);
                 this.equation[min_index - 1] = sub_result;
                 this.equation.splice(min_index, 2);
             }
