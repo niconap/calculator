@@ -12,7 +12,7 @@ class Calculator {
 
     enter(input) {
         // Add an input, such as a number or operator, to the equation.
-        const operators = ['+', '-', '*', '/', '.'];
+        const operators = ['+', '-', '*', '/', '^', '.'];
         if (isNaN(input) && !operators.includes(input)) {
             return;
         }
@@ -43,13 +43,17 @@ class Calculator {
         }
     }
 
-    calculate() {
-        // Calculate the result of the equation, making sure that * and / get
-        // precedence over + and -.
-        if (isNaN(this.equation[this.equation.length - 1])) {
-            return 'Error';
+    #handle_powers() {
+        while (this.equation.indexOf('^') >= 0) {
+            let pow_index = this.equation.indexOf('^');
+            let sub_result = Math.pow(Number(this.equation[pow_index - 1]),
+                Number(this.equation[pow_index + 1]));
+            this.equation[pow_index - 1] = sub_result;
+            this.equation.splice(pow_index, 2);
         }
+    }
 
+    #handle_mult_div() {
         while (this.equation.indexOf('*') >= 0
             || this.equation.indexOf('/') >= 0) {
             let mult_index = this.equation.indexOf('*');
@@ -66,7 +70,9 @@ class Calculator {
                 this.equation.splice(div_index, 2);
             }
         }
+    }
 
+    #handle_plus_min() {
         while (this.equation.indexOf('+') >= 0
             || this.equation.indexOf('-') >= 0) {
             let plus_index = this.equation.indexOf('+');
@@ -83,6 +89,18 @@ class Calculator {
                 this.equation.splice(min_index, 2);
             }
         }
+    }
+
+    calculate() {
+        // Calculate the result of the equation, making sure that * and / get
+        // precedence over + and -.
+        if (isNaN(this.equation[this.equation.length - 1])) {
+            return 'Error';
+        }
+
+        this.#handle_powers();
+        this.#handle_mult_div();
+        this.#handle_plus_min();
 
         let result = this.equation[0];
         this.equation = [];
