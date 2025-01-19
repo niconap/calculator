@@ -19,3 +19,8 @@ $ npm start
 
 The app should automatically open in your browser. If it does not, you can find
 it at [localhost:3000](http://localhost:3000/).
+
+### Credits
+
+For this project, the [CSS reset sheet](https://www.joshwcomeau.com/css/custom-css-reset/)
+by Josh W. Comeau was used.

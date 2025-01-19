@@ -1,3 +1,5 @@
+require('./reset.css');
+require('./styles.css');
 const Calculator = require('./calculator');
 
 const calc_instance = new Calculator()
@@ -33,7 +35,10 @@ buttons.forEach((button) => {
             if (value) {
                 display.innerHTML = value;
             } else {
-                display.innerHTML = calc_instance.get_equation();
+                let equation = calc_instance.get_equation();
+                equation = equation.replace(/\*/g, '&times;')
+                    .replace(/\//g, '&divide;').replace(/ \^ ?/g, '^');
+                display.innerHTML = equation;
             }
         });
     }

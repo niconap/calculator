@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --btn-dim: 3em;
+}
+
+* {
+    outline: none;
+    font-family: 'Work Sans', 'sans-serif';
+}
+
+body {
+    background-color: rgb(249, 249, 249);
+}
+
+button {
+    width: var(--btn-dim);
+    height: var(--btn-dim);
+    border: 1px solid;
+    border-color: rgb(227, 227, 227);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+button:hover {
+    background-color: rgb(249, 249, 249);
+    cursor: pointer;
+    border-color: lightgray;
+    background-color: lightgray;
+}
+
+button:active {
+    border-color: gray;
+    background-color: gray;
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#buttons div {
+    display: flex;
+    gap: 0;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+    width: calc(var(--btn-dim) * 4);
+    border-radius: 0.5em;
+    overflow: hidden;
+    box-shadow: 0 7px 10px rgb(210, 210, 210);
+}
+
+#btn-equals,
+#btn-clear {
+    width: calc(var(--btn-dim) * 2);
+}
+
+#display {
+    height: var(--btn-dim);
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+    overflow-x: auto;
+    background-color: white;
+}
