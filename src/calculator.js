@@ -104,6 +104,10 @@ class Calculator {
     calculate() {
         // Calculate the result of the equation, making sure that * and / get
         // precedence over + and -.
+        if (this.#equation.length < 1) {
+            return;
+        }
+
         if (isNaN(this.#equation[this.#equation.length - 1])) {
             return 'Error';
         }
