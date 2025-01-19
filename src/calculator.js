@@ -113,6 +113,10 @@ class Calculator {
         this.#equation = [];
         return result;
     }
+
+    clear() {
+        this.#equation = [];
+    }
 }
 
 module.exports = Calculator;
