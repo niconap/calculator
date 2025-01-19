@@ -69,3 +69,11 @@ test('Correctly calculates powers', () => {
     calc_instance.enter('^');
     expect(calc_instance.calculate()).toStrictEqual('Error');
 })
+
+test('Correctly handles division by 0', () => {
+    const calc_instance = new Calculator();
+    calc_instance.enter('2');
+    calc_instance.enter('/');
+    calc_instance.enter(0);
+    expect(calc_instance.calculate()).toStrictEqual('Error');
+})

@@ -69,6 +69,9 @@ class Calculator {
                 this.#equation[mult_index - 1] = sub_result;
                 this.#equation.splice(mult_index, 2);
             } else {
+                if (Number(this.#equation[div_index + 1]) == 0) {
+                    return 'Error';
+                }
                 let sub_result = Number(this.#equation[div_index - 1]) /
                     Number(this.#equation[div_index + 1]);
                 this.#equation[div_index - 1] = sub_result;
@@ -106,7 +109,10 @@ class Calculator {
         }
 
         this.#handle_powers();
-        this.#handle_mult_div();
+        let status = this.#handle_mult_div();
+        if (status) {
+            return 'Error'
+        }
         this.#handle_plus_min();
 
         let result = this.#equation[0];
