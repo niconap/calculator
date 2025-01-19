@@ -35,5 +35,5 @@ module.exports = {
     static: './dist',
     port: 3000,
   },
-  mode: 'development',
+  mode: 'production',
 };
